@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove this debugging border that's causing the white screen issue */
+/* * {
+  border: 1px solid red;
+} */
+
+.cursive {
+  font-family: "Cedarville Cursive", cursive;
+}
+.gradient-text {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #3b82f6 0.1%, #2563eb 50.01%, #1d4ed8 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0 -7px 11px rgba(0, 255, 102, 0.12);
+  display: flex;
+
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+}
+
+.button-primary {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 50, 20, 0) 0%,
+      rgba(0, 50, 20, 0.32) 100%
+    ),
+    rgba(0, 255, 102, 0.12);
+  box-shadow: inset 0 0 12px rgba(0, 255, 102, 0.24);
+}
+.button-primary:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 50, 20, 0) 0%,
+      rgba(0, 50, 20, 0.42) 100%
+    ),
+    rgba(0, 255, 102, 0.24);
+  box-shadow: inset 0 0 12px rgba(0, 255, 102, 0.44);
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%;
+}
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background-size: 200% auto;
+  animation: gradient 4s linear infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-[#1e1e1e] text-white antialiased;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+::selection {
+  @apply bg-gray-500/40 text-white;
+}
+
+::-webkit-scrollbar {
+  @apply w-1.5;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500/40 rounded-full hover:bg-gray-500/60;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+.project-action-btn {
+  @apply flex flex-col items-center justify-center p-3 rounded-full bg-gray-900/80 text-white hover:bg-blue-600/80 transition-all transform hover:scale-110 backdrop-blur-sm;
+}
+ 
+.trae-bg {
+  min-height: 100vh;
+  background: #1e1e1e;
+  /* macOS terminal-like background */
+  background: linear-gradient(to bottom, #2d2d2d, #1e1e1e);
+}
+ 
+/* Restore normal cursor */
+html, body, button, a, * {
+  cursor: auto;
+}
+ 
+/* Normal text selection */
+::selection {
+  background: rgba(128, 128, 128, 0.4);
+  color: inherit;
+}
+
+/* Normal caret for text inputs */
+input, textarea {
+  caret-color: auto;
+}
+ 
